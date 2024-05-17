@@ -19,6 +19,18 @@ web app counterpart in Achievement 2.
 <br>
 
 ### Exercise 1.2
+1. Create a structure named recipe_1 with keys for name, cooking_time, and ingredients
+2. The attributes for the recipe_1 structure are:
+    * Name: Tea
+    * Cooking time: 5 minutes
+    * Ingredients: Tea leaves, Sugar, Water
+3. Create the all_recipes structure and add recipe_1 to it.
+4. Create your own recipes (up to 5).
+5. Print the ingredients of each recipe as five different lists in the IPython shell.
+
+<br>
+
+### Exercise 1.3
 Coming soon
 
 <br>
