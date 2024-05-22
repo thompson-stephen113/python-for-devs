@@ -19,7 +19,7 @@ web app counterpart in Achievement 2.
 <br>
 
 ### Exercise 1.2
-1. Create a structure named recipe_1 with keys for name, cooking_time, and ingredients
+1. Create a structure named recipe_1 with keys for name, cooking_time, and ingredients.
 2. The attributes for the recipe_1 structure are:
     * Name: Tea
     * Cooking time: 5 minutes
@@ -31,9 +31,32 @@ web app counterpart in Achievement 2.
 <br>
 
 ### Exercise 1.3
-Coming soon
+1. Open a Python script and name it "exercise_1.3.py".
+2. Initialize two empty lists: recipes_list and ingredients_list.
+3. Define take_recipe(), which takes user input for:
+    * name (str): Stores recipe name
+    * cooking_time (int): Stores cooking time (minutes)
+    * ingredients (list): Stores ingredients, each as a string
+    * recipe (dict): Stores name, cooking_time, ingredients
+4. Take user input for number of recipes to be entered, stored in variable n.
+5. Run a for loop for n times:
+    * Run take_recipe() and store output in variable recipe.
+    * Run another for loop inside this loop, iterating through recipe's ingredients, picking them out individually.
+        * Checks if an ingredient is present in ingredients_list and appends it if not.
+    * Append recipe to recipes_list.
+6. Run another for loop that iterates through recipes_list and picks out each recipe individually:
+    * Determine difficulty of recipe:
+        * If cooking_time < 10 minutes and number of ingredients < 4, set variable difficulty to Easy.
+        * If cooking_time < 10 minutes and number of ingredients >= 4, set variable difficulty to Medium.
+        * If cooking_time >= 10 minutes and number of ingredients < 4, set variable difficulty to Intermediate.
+        * If cooking_time >= 10 minutes and number of ingredients >= 4, set variable difficulty to Hard.
+    * Display recipe in format a specified format.
+7. Display all ingredients, entered by user, in alphabetical order.
 
 <br>
+
+### Exercise 1.4
+Coming soon
 
 ## Achievement 2
 Coming soon
