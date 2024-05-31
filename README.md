@@ -103,6 +103,52 @@ web app counterpart in Achievement 2.
 <br>
 
 ### Exercise 1.5
+1. Define class <code>Recipe</code> with attributes:
+    * <code>name</code>
+    * <code>ingredients</code>
+    * <code>cooking_time</code>
+    * <code>difficulty</code>
+2. Define procedural attributes (methods) for the class:
+    * Initialization method that takes all data attributes.
+    * Getter and setter methods for <code>name</code> and <code>cooking_time</code>.
+    * <code>add_ingredients()</code>: takes variable-length arguments for recipes's ingredients.
+        * Method should take in these ingredients and add them to <code>ingredients</code>.
+        * Once all ingredients are added, call <code>update_all_ingredients()</code>.
+    * Getter method for <code>ingredients</code> that calls itself.
+    * <code>calc_difficulty()</code>: calculates difficulty of recipes using method from prior Exercises.
+    * <code>search_ingredient()</code>: takes an ingredient as an argument, searches for it in a recipe, and returns <code>True</code> or <code>False</code>.
+    * <code>update_all_ingredients()</code>: goes through the current object's ingredients and adds them to class variable <code>all_ingredients</code> if not already present.
+        * This variable keeps track of all ingredients across all recipes.
+    * String representation that prints entire recipe.
+3. <code>recipe_search()</code>: finds recipes with a specified ingredient.
+    * Takes 2 parameters:
+        * <code>data</code>: takes in a list of <code>Recipe</code> objectsto search from.
+        * <code>ingredient</code>: ingredient search term.
+    * Runs a <code>for</code> loop through <code>data</code>, and:
+        * Within the object, calls <code>search_ingredient()</code> to see if ingredient is present.
+        * If above condition is satisfied, print recipe.
+4. In main code, make an object under <code>Recipe</code> class:
+    * Initialize object <code>tea</code> under <code>Recipe</code>.
+    * Set name to <code>"Tea"</code>.
+    * Set cooking time to <code>5</code>.
+    * Add ingredients to recipe: <code>"Tea Leaves"</code>, <code>"Sugar"</code>, <code>"Water"</code>.
+    * Display string representation.
+5. Add 3 more recipes:
+    * Coffee:
+        * Ingredients: Coffee Powder, Sugar, Water
+        * Cooking Time: 5
+    * Cake:
+        * Ingredients: Sugar, Butter, Eggs, Vanilla Essence, Flour, Baking Powder, Milk
+        * Cooking Time: 50
+    * Banana Smoothie:
+        * Ingredients: Bananas, Milk, Peanut Butter, Sugar, Ice Cubes
+        * Cooking Time: 5
+6. Wrap recipes into a list called <code>recipes_list</code>.
+7. Use <code>recipe_search()</code> to search for recipes containing Water, Sugar, Bananas.
+
+<br>
+
+### Exercise 1.6
 Coming soon
 
 ## Achievement 2
