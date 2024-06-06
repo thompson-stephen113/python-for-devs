@@ -149,7 +149,72 @@ web app counterpart in Achievement 2.
 <br>
 
 ### Exercise 1.6
+#### Part 1: Create & Connect Database
+1. Import mysql.connector.
+2. Initialize <code>conn</code>.
+3. Initialize <code>cursor</code> from <code>conn</code>.
+4. Create a database, <code>task_database</code>.
+5. Have script access database with <code>USE</code> statement.
+6. Create <code>Recipes</code> table with columns:
+    * <code>id</code>: integer type; increments automatically with primary key.
+    * <code>name</code>: string type; character limit of 50.
+    * <code>ingredients</code>: string type; character limit of 255.
+    * <code>cooking_time</code>: integer type.
+    * <code>difficulty</code>: string type; character limit of 20.
+
+<br>
+
+#### Part 2: The Main Menu
+<code>main_menu()</code>:
+1. <code>create_recipe(conn, cursor)</code>
+2. <code>search_recipe(conn, cursor)</code>
+3. <code>update_recipe(conn, cursor)</code>
+4. <code>delete_recipe(conn, cursor)</code>
+5. If the user exits this loop, changes should be committed, then the file stream should be closed. Call <code>main_menu()</code> in the main code.
+
+<br>
+
+#### Part 3: <code>create_recipe()</code>
+1. Take user input for data attributes:
+    * <code>name</code>: name of recipe, string.
+    * <code>cooking_time</code>: time in minutes, integer.
+    * <code>ingredients</code>: ingredients of recipe, string list.
+2. Define <code>calc_difficulty</code> using same logic as previous exercises.
+3. Write SQL queries to convert <code>ingredients</code> into a comma-separated string.
+4. Execute query and commit changes.
+
+<br>
+
+#### Part 4: <code>search_recipe()</code>
+1. Display list of all ingredients from <code>Recipes</code> table. Obtain list using <code>SELECT</code> on the <code>ingredients</code> column and store in variable <code>results</code>.
+2. <code>results</code> is made up of a list of rows, each row being a tuple of column values. Add all ingredients from <code>ingredients</code> column to new list <code>all_ingredients</code> with no duplicates.
+3. Allow user to pick a number corresponding with the ingredient to search. Store ingredient in variable <code>search_ingredient</code>.
+4. Use <code>WHERE</code> with <code>LIKE</code> to search rows of the table for <code>search_ingredient</code> in <code>ingredients</code> column.
+    * Search pattern for ingredient: <code>%{search_ingredient}%</code>.
+5. Use this logic to build the query, fetch results, and display to user.
+
+<br>
+
+#### Part 5: <code>update_recipe()</code>
+1. Fetch all recipes in database and list to user. User will pick recipe to update by its ID and the column name containing the value to be modified (<code>name</code>, <code>cooking_time</code>, <code>ingredients</code>).
+2. Once column is selected, take new value input from user.
+3. Build query in string form to update an entry on the table for the given ID, column, and updated value. If user updates <code>cooking_time</code> or <code>ingredients</code>, <code>difficulty</code> must be recalculated and updated.
+4. Execute queries and commit changes.
+
+<br>
+
+#### Part 6: <code>delete_recipe()</code>
+1. Displays all recipes, and user selects one by its ID to delete.
+2. Build query using <code>DELETE</code>, where the row to be deleted is identified by the specified ID.
+3. Execute query and commit changes.
+
+<br>
+
+### Exercise 1.7
 Coming soon
+
+<br>
+
 
 ## Achievement 2
 Coming soon
