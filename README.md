@@ -211,7 +211,108 @@ web app counterpart in Achievement 2.
 <br>
 
 ### Exercise 1.7
-Coming soon
+#### Part 1: Set Up Script & SQLAlchemy
+1. Open a script file called <code>recipe_app.py</code>.
+2. Import all packages and methods necessary to build app.
+3. Set up SQLALchemy. Make sure MySQL server is running.
+4. Use credentials to create <code>engine</code> object that connects to database.
+5. Make a session object to make changes to database.
+    * Generate <code>Session</code> class, <code>bind</code> it to <code>engine</code>, and initialize <code>session</code> object.
+
+<br>
+
+#### Part 2: Create Model & Table
+Store declarative base class into variable <code>Base</code> and begin definition for <code>Recipe</code> model.
+1. <code>Recipe</code> should inherit <code>Base</code>.
+2. Define attribute to set table's name to <code>final_recipes</code>.
+3. Define recipe attributes to create table columns:
+    * <code>id</code>: integer; primary key; incremenets automatically
+    * <code>name</code>: string (50 character limit)
+    * <code>ingredients</code>: string (255 character limit)
+    * <code>difficulty</code>: string (20 character limit)
+4. Define <code>\_\_repr__</code> method that shows quick representation of recipe, including <code>name</code>, <code>id</code>, and <code>difficulty</code>.
+5. Define <code>\_\_str__</code> method that prints recipe in a readable format.
+6. Define <code>calc_difficulty</code> using logic from past exercises.
+7. Define method that retrieves <code>ingredients</code> string inside <code>Recipe</code> as a list, called <code>return_ingredients_as_list()</code>
+    * If the instance variable <code>self.ingredients</code> is an empty string, return an empty list.
+    * Otherwise, use <code>split()</code> to split the string whenever there is a comma followed by a space.
+8. Create the corresponding table on the database using <code>create_all</code> method from <code>Base.metadata</code>.
+
+<br>
+
+#### Part 3: Define Main Operations as Functions
+<code>create_recipe()</code>
+1. Collect details of recipe (<code>name</code>, <code>ingredients</code>, <code>cooking_time</code>) from user.
+2. Ensure all inputs are appropriate.
+3. Collect ingredients from user:
+    * Define a temporary empty list <code>ingredients</code>.
+    * Ask user how many ingredients to enter.
+    * Based on this number, run a <code>for</code> loop to collect each ingredient and add it to the temporary list.
+4. Convert <code>ingredients</code> list into a string using <code>join()</code>, where each ingredient is joined with a comma followed by a space.
+5. Create <code>recipe_entry</code> object from <code>Recipe</code> using the above details.
+6. Generate <code>difficutly</code> for the recipe by calling <code>calc_difficulty</code>.
+
+<br>
+
+<code>view_all_recipes()</code>
+1. Retrieve all recipes from database as a list.
+2. If there are no entries, inform the user, and exit the function to return to main menu.
+3. Loops through list of recipes and call each of their <code>\_\_str__</code>
+methods to display them.
+
+<br>
+
+<code>search_by_ingredients()</code>
+1. Check if the table has any entries. Use <code>count()</code> to get number of entries in the given table: <code>session.query(\<model name>).count()</code>. If no entries, notify user, and exit the function.
+2. Retrieve only values from <code>ingredients</code> column of the table, and store them into variable <code>results</code>.
+3. Initialize empty list <code>all_ingredients</code>.
+4. Go through each entry in <code>results</code>, split up ingredients into a temporary list, and add each ingredient from this list to <code>all_ingredients</code>. Check each ingredient is not already present before adding.
+5. Display ingredients to user, where each ingredient has a number displayed next to it. Ask user to select ingredients by number, separated by spaces, to search for recipes.
+6. Check that the user's inputs match available options. Otherwise, inform user and exit function.
+7. Based on user's selection, make a list of ingredients to be searched, <code>search_ingredients</code>, which contains these ingredients as strings.
+8. Initialize empty list <code>conditions</code>, which will contain <code>like()</code> conditions for each ingredient being searched.
+9. Run a loop through <code>search_ingredients</code>:
+    * Make a search string, <code>like_term</code>, which is the ingredient, surrounded by "%" on either side.
+    * Append search condition containing <code>like_term</code> to <code>conditions</code> list (e.g., <code>\<Model name>.\<column to serach in>.like(like_term)</code>).
+10. Retrieve all recipes from database using <code>filter()</code>, containing <code>conditions</code>. Display recipes using <code>\_\_str__</code> method.
+
+<br>
+
+<code>edit_recipe</code>
+1. Check if there are any recipes in the database, and continue only if there are. Otherwise, exit function.
+2. Retrieve <code>id</code> and <code>name</code> for each recipe and store them into <code>results</code> variable.
+3. For each item in <code>results</code>, display recipes to user.
+4. User selects recipe by <code>id</code>. If chosen <code>id</code> does not exist, exit function.
+5. Retrieve entire corresponding recipe and store in variable <code>recipe_to_edit</code>.
+6. Display recipe <code>name</code>, <code>ingredients</code>, and <code>cooking_time</code>. <code>difficulty</code> cannot be edited.
+7. Ask user which attribute to edit by entering its corresponding number.
+8. Based on input, use <code>if-else</code> statements to edit attribute inside <code>recipe_to_edit</code>. Recalculate difficulty using <code>calc_difficulty</code>.
+9. Commit changes.
+
+<br>
+
+<code>delete_recipe()</code>
+1. Check if any there are any recipes in database, and continue only if there are. Otherwise, exit function.
+2. Retrieve <code>id</code> and <code>name</code> for each recipe and store them into <code>results</code> variable.
+3. For each item in <code>results</code>, display recipes to user.
+4. User selects recipe by <code>id</code>. If chosen <code>id</code> does not exist, exit function.
+5. Retrieve entire corresponding recipe and store in variable <code>recipe_to_delete</code>.
+6. Ask user if they are sure they want to delete this entry. If yes, perform delete operation. If not, exit function.
+
+<br>
+
+#### Part 4: Design Main Menu
+Main menu is contained in a <code>while</code> loop, where condition to exit loop will be based on user choice. Loop continues as long as user does not choose <code>quit</code>.
+
+1. Inside loop, display six options:
+    * Create a new recipe
+    * View all recipes
+    * Search for recipes by ingredients
+    * Edit a recipe
+    * Delete a recipe
+    * Type "quit" to exit app
+2. Use <code>if-elif</code> statements to launch the function that corresponds to the user's selection. Use <code>else</code> statement to handle improper input and display menu again.
+3. Once user chooses to quit, close <code>session</code> and <code>engine</code> with their respective <code>close</code> methods.
 
 <br>
 
