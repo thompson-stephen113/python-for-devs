@@ -6,8 +6,7 @@
 ## Achievement 1: Introduction to Python
 
 ### Objective
-Build the command line version of a Recipe app, which acts as a precursor to its
-web app counterpart in Achievement 2.
+Build the command line version of a Recipe app, which acts as a precursor to its web app counterpart in Achievement 2.
 
 ### Exercise 1.1
 1. Install Python v. 3.8.7 onto the system.
@@ -317,5 +316,13 @@ Main menu is contained in a <code>while</code> loop, where condition to exit loo
 <br>
 
 
-## Achievement 2
-Coming soon
+## Achievement 2: Web Development & Django
+
+### Objective
+Take your Recipe app from Achievement 1 and use the Django web framework to develop a fully fledged web application with multiple users and an admin panel.
+
+### Exercise 2.1
+1. Download and install Python.
+2. Create a folder for upcoming projects.
+3. Setup and create a virtual environment and name it achievement2-practice.
+4. Install Django.
