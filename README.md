@@ -326,3 +326,19 @@ Take your Recipe app from Achievement 1 and use the Django web framework to deve
 2. Create a folder for upcoming projects.
 3. Setup and create a virtual environment and name it achievement2-practice.
 4. Install Django.
+
+<br>
+
+### Exercise 2.2
+1. Create folder "A2_Recipe_App".
+2. Create virtual environment "a2_env_recipeapp" and activate it.
+3. Install Django in the virtual environment.
+4. In "A2_Recipe_App", create Django project "recipe_project".
+5. Rename "recipe_project" project directory to "src".
+6. From with "src", run migrations and then run the server.
+7. Create superuser.
+
+<br>
+
+### Exercise 2.3
+Coming soon
