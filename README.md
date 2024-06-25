@@ -341,4 +341,23 @@ Take your Recipe app from Achievement 1 and use the Django web framework to deve
 <br>
 
 ### Exercise 2.3
+1. Create database blueprint.
+    * Identify the attributes of the Recipe apps.
+    * Draw the schema.
+2. Create apps.
+    * Run <code>startapp</code> command for each app in the project.
+    * Go to the project's <code>settings.py</code> file to link the apps to the <code>INSTALLED_APPS</code> parameter.
+3. Create models: Based on the blueprint, create models for the entities in the <code>models.py</code> files in the app(s). Define the fields and <code>\_\_str__</code> for each class.
+4. Register models: Navigate to the respective <code>admin.py</code> files in each app folder and register the class(es).
+5. Migrate: Run <code>makemigrations</code> and <code>migrate</code> in terminal to convert class models into database tables.
+6. Write tests.
+    * Add tests to the apps to cover the models.
+    * Run the tests.
+    * In case of failed tests, fix the bug(s) and run again. Repeat until all tests pass.
+7. Run server.
+8. Add data from the Django site admin: Add at least five recipes into the database.
+
+<br>
+
+### Exercise 2.4
 Coming soon
