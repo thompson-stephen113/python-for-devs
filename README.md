@@ -360,4 +360,21 @@ Take your Recipe app from Achievement 1 and use the Django web framework to deve
 <br>
 
 ### Exercise 2.4
+1. In VSCode, open <code>A2_Recipe_App/src</code>.
+2. Pick an app to create a view. Navigate to the app's <code>views.py</code> file and define the view.
+3. Create template.
+    * Create a <code>templates</code> folder under the app directory.
+    * Create a folder named after the app under the newly created <code>templates</code> folder.
+    * Create an HTML file to define the template. Name the file <code>recipes_home.html</code>. Specify the correct template path in the app's <code>views.py</code> file.
+    * Design the welcome page in <code>recipes_home.html</code>.
+4. Map view to URL.
+    * Create a urls.py file in the app directory.
+    * Specify the <code>path</code> in the app's <code>urls.py</code> file to connect the route corresponding to "http://127.0.0.1:8000/" with the view specified by the app's <code>views.py</code> file. Import the necessary packages and specify the app name.
+    * Update the <code>urls.py</code> file in the main recipe project by registering the view to <code>urlpatterns</code>. Import the necessary packages to include the app.
+5. Run server.
+6. Load site in browser.
+
+<br>
+
+### Exercise 2.5
 Coming soon
