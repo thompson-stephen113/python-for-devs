@@ -35,3 +35,11 @@ class BookModelTest(TestCase):
 
         # Compares value to expected result
         self.assertEqual(max_length, 120)
+
+    # Defines test for getting the absolute URL of a book object
+    def test_get_absolute_url(self):
+        # Gets a book object to test
+        book = Book.objects.get(id=1)
+
+        # Compares value to expected result
+        self.assertEqual(book.get_absolute_url(), "/books/list/1")

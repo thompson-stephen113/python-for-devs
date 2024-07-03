@@ -1,0 +1,31 @@
+Model updates:
+
+The model for the Recipe Collection will
+remain the same, but I need to add a pic
+attribute as well for each recipe to have
+an image. I will also be adding an
+additional app for Users, which will at
+least consist of a username and pic attribute.
+I may eventually add attributes for
+password and web token, if necessary.
+
+
+Frontend inspirations:
+
+https://blog.prototypr.io/the-tasty-app-case-study-dbd0f38065e7
+I found an article about the development of the Tasty
+app, which is used for finding recipes and watching
+videos on how to make them. In their final frontend
+build version, their layout is well-executed and
+simplistic, while not looking too barebones. The colors
+used are consistent and appropriate to the brand, and
+spacing between elements is well-executed.
+
+https://play.google.com/store/apps/details?id=com.tudorspan.recipekeeper&hl=en_US
+Similarly to Tasty, Recipe Keeper has a layout that makes
+the most use of screen space. It also has a wide range of
+categories and options for searching recipes. This app is
+a good contrast to Tasty as the latter makes good use of
+negative space to avoid appearing cluttered. That being
+said, Recipe Keeper does a good job of balancing out the
+space it has to work with and making the most of it.

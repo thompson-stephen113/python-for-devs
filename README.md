@@ -377,4 +377,21 @@ Take your Recipe app from Achievement 1 and use the Django web framework to deve
 <br>
 
 ### Exercise 2.5
-Coming soon
+1. Update models (if needed).
+    * Create an empty document and discuss if you will be changing any attributes from your models/tables.
+    * Make necessary changes in <code>models.py</code> files of affected apps.
+    * Activate virtual environment, navigate to project folder, and run migrations.
+2. Add records (for at least 5 recipes).
+    * Prepare information for the database. Download any images for them and save them on the computer.
+    * Create entries in the Django admin panel in browser.
+3. Develop welcome page.
+    * Take inspiration from existing recipe applications. Include a section called "frontend inspirations" in a document and add links to at most 3 recipe applications. Write a few lines on what you like about them.
+    * Try to reproduce the look and feel of your favorite application.
+4. Generate a recipes list.
+    * Develop a recipes sub-page that lists all recipes. Add as little or as much information as desired. Use HTML and CSS to enhance the page's look. Ensure that the entries are individually clickable and linked to their details page.
+5. Add recipe details.
+    * Create a details page for recipes. Display the information in the most presentable way.
+6. Repeat (if necessary).
+    * If you have multiple tables, repeat steps 1, 2, 4, and 5 to make sure they have all the necessary attributes and that the records have been added. Also, if you need to display these records as listts and/or details, create views and templates for them now.
+7. Write tests.
+    * Add tests corresponding to the functionality added. Make sure that all links work. Run tests and ensure that all of them pass.

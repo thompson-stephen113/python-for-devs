@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+{% load static %}
+
 <html lang="en">
     <head>
         <meta charset="UTF-8">
@@ -7,6 +9,8 @@
     </head>
 
     <body>
-        Welcome to our Bookstore
+        <h1 style="text-align: center;">Welcome to our Bookstore</h1>
+
+        <img src="{% static 'sales/images/bookshelf.jpg' %}" alt="home" width="600" height="300">
     </body>
 </html>
