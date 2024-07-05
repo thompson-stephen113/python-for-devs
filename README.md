@@ -395,3 +395,23 @@ Take your Recipe app from Achievement 1 and use the Django web framework to deve
     * If you have multiple tables, repeat steps 1, 2, 4, and 5 to make sure they have all the necessary attributes and that the records have been added. Also, if you need to display these records as listts and/or details, create views and templates for them now.
 7. Write tests.
     * Add tests corresponding to the functionality added. Make sure that all links work. Run tests and ensure that all of them pass.
+
+<br>
+
+### Exercise 2.6
+1. Provide authentication.
+    * Create a login view.
+    * Create a login template.
+    * Register a view and map URL.
+    * Provide a clickable login link or button on the homepage that routes to the authentication form.
+    * Identify which page you want to protect via authentication and redirect the user to that page after a successful login.
+2. Protect views.
+    * Identify which views or pages you want to protect via authentication. Add necessary code at all relevant views to ensure that the page isn't called if the user isn't logged in. Access the URLs of the protected views in browser and make sure that you are redirected to the login page.
+3. Implement logout.
+    * Provide a logout link or button on each protected page.
+4. Run server and capture output.
+    * Navigate to <code>src</code> of the application, activate virtual environment, and run the server.
+    * Record a typical user journey through the app.
+
+### Exercise 2.7
+Coming soon
