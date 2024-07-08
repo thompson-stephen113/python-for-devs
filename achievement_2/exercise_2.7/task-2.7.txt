@@ -1,0 +1,54 @@
+Take some time to think of what you want users to search for,
+the criterion for search, and format of output.
+Create a new empty document and call it “Task-2.7”.
+Place your thoughts in this document. Save the document.
+
+I want users to be able to search for recipes by name, ingredients
+(and what recipes they are used in), and recipes by difficulty. I
+don't think I will include cooking time as a search term as I feel
+like users would be less likely to want to search for recipes by that
+attribute.
+
+----------------------------------------------------------------------------------------------------
+
+Search criterion:                                   Output format:
+{recipe.name}                                       name, ingredients, cooking_time, difficulty
+"easy", "medium", "intermediate", "hard"            name, ingredients, cooking_time
+{recipe.ingredients}                                name
+
+Data Analysis:
+Bar graph:
+Display recipe name (x) and cooking time (y)
+
+Pie chart:
+Display difficulty of all recipes by their total percentage
+
+Line graph:
+Display recipe name (x) and number of ingredients (y)
+
+---------------------------------------------------------------------------------------------------
+
+Execution flow:
+      User lands on homepage
+                |
+           User logs in
+                |
+  User is redirected to collection
+                |
+       User selects a recipe
+                |
+ User is redirected to details page
+                |
+    User returns to collection
+                |
+   User navigates to search URL
+                |
+    User searches all recipes
+                |
+   User searches recipes by name
+                |
+User searches recipes by cooking time
+                |
+ User searches recipes by difficulty
+                |
+          User logs out

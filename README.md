@@ -414,4 +414,21 @@ Take your Recipe app from Achievement 1 and use the Django web framework to deve
     * Record a typical user journey through the app.
 
 ### Exercise 2.7
+1. Implement Search for Recipes:
+    * Take time to think of what users might search for, criterion for search, and format of output.
+    * Create a user form to allow users to input search criteria.
+    * Extract the data as QuerySet using search criteria.
+    * Convert QuerySet to pandas DataFrames.
+    * Display search results as a table.
+    * Ensure recipes returned by search criteria are clickable and lead to details page of the recipe.
+2. Data Visualization:
+    * Note at least one visualization using a bar, pie, and line chart. For each of the scenarios, identify the x- and y- axes and labels (if any).
+    * Install <code>matplotlib</code>.
+    * Implement charts.
+3. Write tests:
+    * Perform tests checking field for values, formats, or lengths, ensuring login protection of views, appropriate pagination, etc.
+    * Run tests with verbosity set to 2.
+4. Run server and capture output.
+
+### Exercise 2.8
 Coming soon

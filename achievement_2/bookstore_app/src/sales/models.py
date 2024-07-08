@@ -11,4 +11,4 @@ class Sale(models.Model):
 
     # String representation
     def __str__(self):
-        return str(self.book)
+        return f"id: {self.id}, book: {self.book.name}, quantity: {self.quantity}, price: {self.price}"
