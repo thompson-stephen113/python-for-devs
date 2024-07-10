@@ -431,4 +431,37 @@ Take your Recipe app from Achievement 1 and use the Django web framework to deve
 4. Run server and capture output.
 
 ### Exercise 2.8
-Coming soon
+1. Review Website for Functionality and Outlook:
+    * Make sure that your application has:
+        * A well formatted homepage.
+        * Links to subpages where users can view and search for recipes.
+        * A login form.
+        * Features for logged-in users, such as “add recipes”.
+        * An “About Me” page with important links to your portfolio, contact information, GitHub, and any other relevant links.
+2. Add tests:
+    * Add tests to your apps to cover the models, views, and forms.
+    * Run these tests.
+    * In case of failed tests, fix the bug and run again. Repeat until all tests have passed.
+3. Upload web application to server:
+    * Prepare to Upload Code on GitHub:
+        * Review your code to ensure it’s properly documented.
+        * Make a backup of your project to ensure you have a fallback in case something goes wrong in the following steps and you have to start over.
+        * Ensure you have the necessary files in place (i.e., README, .gitignore).
+        * Ensure you remove your settings.py file (or at least the SECRET_KEY) from your GitHub.
+        * Ensure you have a clone and can push code to your GitHub from your terminal.
+        * Push it.
+    * Configure Django files:
+        * Activate the virtual environment.
+        * Configure the Django files.
+        * Install the packages needed to make your application production ready.
+        * Freeze the requirements.
+        * Push updated code to GitHub.
+    * Deploy on Web Server:
+        * Create a Heroku account.
+        * Configure the project using Heroku CLI.
+        * Push code to Heroku remote.
+        * Push web application online.
+        * Create users: Add one superuser for your mentor.
+        * Add data using the admin panel. Add at least 15 recipes.
+        * Verify that the application is working as intended.
+        * Make a final check to push the updated settings.py file and the hidden SECRET_KEY.
